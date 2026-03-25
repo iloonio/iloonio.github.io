@@ -1,4 +1,4 @@
-# Silt's (Ruslan's) dev vlog for DH2650
+# Silt's (Ruslan's) dev blog for DH2650
 
 This page is going to document my own contributions for the game design course at KTH with the course code DH2650 (make a ink here).
 
