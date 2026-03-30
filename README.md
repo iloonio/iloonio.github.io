@@ -6,8 +6,34 @@ This page is going to document my own contributions for the game design course a
 
 ## 2026-03-25 - First meeting
 
-I booked the group's first meeting, where we spent a lot of time talking about our interests, what games we've played, and such. It took some time, but eventually all of the group members began opening up about their experiences :) This lead to a wonderful brainstorming session where we finally came up with our game idea! We used Figma to brainstorm, which included writing down all kinds of ideas until we found something that we really wanted to refine. It makes me really glad that I'm in this project with two interaction design students, since they're very familiar with brainstorming and the creative process. 
+I booked the group's first meeting, where we spent a lot of time talking about our interests, what games we've played, and such. It took some time, but eventually all of the group members began opening up about their experiences :) This lead to a wonderful brainstorming session where we finally came up with our game idea! We used Figma to brainstorm, which included writing down all kinds of ideas until we found something that we really wanted to refine. It makes me really glad that I'm in this project with two interaction design students, since they're very familiar with brainstorming and the creative process.
+
+## 2026-03-30 - Personal Reflections
+
+I think the hardest part of game development in groups is _alignment_, for lack of a less corporate-sounding word. Each member has their own idea for how this game will look and feel, even though we use the same language to describe it. The most important part right now is to bridge our respective gaps and work towards a shared mythos of what our game is supposed to be.
+
+It's kinda nice that we use Figjam for so much of this. It lets us share ideas and structure them in a non-linear fashion. I've written down my own ideas for the game, and it seems like my team has done the same! I am excited to meet today and finally start working on some tangible stuff.
+
+### Making a Multiplayer Game
+
+After doing a short research session about making a multiplayer game, I have come to the conclusion that it would be best to make a client-hosted Unity game. Godot's multiplayer solutions just cannot hold up to Unity as of now, as much as I would love to work in Godot. There's some thing called Relay I think? We can host our game through that I think. I will have to do some more research into that.
+
+### Dump from personal notes
+Give more depth to the potion system:
+- The cauldron has a simple “cook” mechanic. Ingredients inside are cooked. Then, by holding a bottle and interacting with the cauldron again, you fill the bottle with an elixir. 
+- Some Ingredients need different amounts of cooking time for their effect to materialize. If certain ingredients are overcooked, it might result in a terrible reaction. 
+	- Example #1: Gunpowder only needs to be cooked once to have an effect. However, if gunpowder is cooked together with cinders, it will cause the cauldron to explode.
+	- Example #2: Red cap mushrooms need to be cooked thrice in transmit its enlarging effect. Otherwise it acts as a poison that puts you to sleep. 
+- Rename gunpowder to Sulfur. 
+- **Reason for adding this:** It gives potion crafting more depth, and creates unpredictability, which I feel is at the core of wizardry.
 
 
-
+#### Game design pillars
+Ranked from Most Important to Least Important, but all are vital. 
+##### Crafting 
+- Alchemy is all about making a concoctions to solve problems! Crafting should be integral to the gameplay loop. 
+##### Chaotic 
+- Alchemy and Wizardry is often unpredictable, and this should be reflected in our potion crafting & environment design. Let actions have consequences that teach the players what to do & not do. 
+##### Social
+- Players work towards a common goal and their decisions should impact each other, whether they are working towards that common goal or not. 
 ---
