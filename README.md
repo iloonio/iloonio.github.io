@@ -36,4 +36,17 @@ Ranked from Most Important to Least Important, but all are vital.
 - Alchemy and Wizardry is often unpredictable, and this should be reflected in our potion crafting & environment design. Let actions have consequences that teach the players what to do & not do. 
 ##### Social
 - Players work towards a common goal and their decisions should impact each other, whether they are working towards that common goal or not. 
----
+
+## 2026-03-31
+
+We had a hybrid meeting where we discussed some question marks regarding game design. I setup a Github Repo with a Gtihub Projects attached to it. I also put up some issues on our KanBan board, I'm hoping people will use it! 
+
+I told the group that I'd be down to do the elevator pitch & presentation essentially solo, Lugina has helped out a tonne with the business case however, so thats nice :) Aside from that, Yufan has made plenty of sketches that I can use in the presentation, so I have some good material to show during the presentation 
+
+## 2026-04-01
+
+Happy April Fools!
+
+I've more or less finished making the slides for the presentation tomorrow. I feel like freestyling it a little. It sucks that we haven't started writing anything in the GDD yet, I wish our lead Game Designer would've written down the base mechanics at least. Currently it's still all up in the air so i suppose whatever I present tomorrow is what I *think* the group thinks we are making. Either way, I think it will be fruitful.
+
+I want to start coding on this project so I can learn how multiplayer game development works. I want to ask if there are any good resources for it so I can save time on researching. 
