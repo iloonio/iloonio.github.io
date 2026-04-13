@@ -56,3 +56,46 @@ I want to start coding on this project so I can learn how multiplayer game devel
 Ok so quick recap for these past three days! I've managed to make multiplayer for in Unity, I just need to test if my solution works remotely. With that said, I think I have a firm grasp of Netcode for GameObjects now, so I should be able to easily convert anything my team makes into viable multiplayer code.
 
 Aside from that, on April 6th, we held a group meeting where we wrote down the concrete goals for our Prototype, I then divvied up the work. I also finally began editing the GDD, being the first and so far only person to start writing stuff down in it hahah. It's not a big deal though, since we use our Figma as the living document, while the GDD is just the formalized version of it.
+
+## 2026-04-13
+
+I haven't been writing much in this blog, because i've been doing lots of work on the project. Namely, I have been devising how to do random map generation, and with Björn's dissuation, I've decided it to be outside of the scope of the project. Here it is anyway: 
+
+### Random Generation
+![initial](image-48.png)
+Suppose we have a NxN grid that represents the game world. The Cauldron will spawn at a set location on this game world, and the cauldron room will always have three doorways leading to it. 
+
+![random1](image-49.png)
+Now, Randomly Assign Four Gardens on the grid, these are not allowed to be directly next to the Cauldron.
+
+
+![Paths](image-50.png)
+Then, do a [[DFS properties|DFS]] search with a randomly chosen direction from each garden towards the Cauldron as the end location. The only limitation is that the DFS is not allowed to go to a Garden Node. DFS is allowed to visit nodes that have already been visited, but it is not allowed to go through a connection that has already been walked through. 
+
+![Ingredients](image-51.png)
+Then, Assign each Garden an Ingredient and assign a Shortcut Path at a few randomly chosen and unassigned Paths, and also at one previously assigned path (but never directly to a garden). Shortcuts are paths that can be unlocked by either setting an obstacle on fire and/or blowing it up
+![](image-52.png)
+
+And now randomly assign different room prefabs to the unclaimed tiles! There are some rules to this however: 
+- First, each room is assigned two values: **Difficulty** and **Number of Exits (NoE)**. 
+	- Difficulty basically means how hard the room is to pass through. It’s a heuristic for map creation, ranging from integers 0 through 2. Room prefabs will have a Difficulty rating attached to them, which the generator uses to assign prefab rooms. Difficulty is assigned with Perlin noise, where values assign the following difficulty: 
+		- $mat(0,0.4)$ : 0
+			- 0: Players can pass through without any tools to help whatsoever, even if miasma would occupy half of the room. 
+		- $mat(0.4, 0.8)$ : 1
+			- 1: Players don’t need tools to pass through, assuming no Miasma occupies the room.
+		- $mat(0.8, 1)$ : 2
+			- 2: Players will need tools to pass through, assuming no miasma is present
+- Second, we go through each tile and assign it a room based on Difficulty and NoE, with NoE taking priority over Difficulty. If a a specific Difficulty-NoE configuration exists, it will pick the next possible room with matching NoE and closest match Difficulty. 
+- Thirdly, in paths where we have marked shortcuts, we put an obstacle in the way. Obstacles can come in three flavors and are chosen at random: 
+	- Flammable Obstacle: Ignite it to clear it. 
+	- Breakable Obstacle: Explode it to clear it.
+	- Vertical Obstacle: A high wall blocks the path. Find some way to scale it.
+
+That’s it! You now have a fully-generated game map. It will require the following minimum prefabs however:
+- Atleast one room prefab for every NoE configuration.
+	- 1 NoE: 1 room prefab $times$ 4 rotations. 
+	- 2 NoE: 2 room prefabs $times$ 2 rotations.
+	- 3 NoE: 1 room prefab $times$ 2 rotations. 
+	- 4 NoE: 1 room prefab
+
+I am starting to think that it might be better if we have separate prefabs for walls with their NoE, and a set of prefabs for the difficulty. 
