@@ -98,4 +98,12 @@ That’s it! You now have a fully-generated game map. It will require the follow
 	- 3 NoE: 1 room prefab $times$ 2 rotations. 
 	- 4 NoE: 1 room prefab
 
-I am starting to think that it might be better if we have separate prefabs for walls with their NoE, and a set of prefabs for the difficulty. 
+I am starting to think that it might be better if we have separate prefabs for walls with their NoE, and a set of prefabs for the difficulty.
+
+## 2026-04-14
+I sat for 4 hours trying to code multiplayer. It should've taken me at most 2 hours, but the last two hours were spent trying to integrate existing code into multiplayer. I am going to bring it up with the group and ask the coders to at the very least keep all of the logic for player interaction inside of the player interaction script (Why is it spread out across two files anyway?)
+
+At the very least, I made a functional lobby that connects to unity sessions and loads players into the game world. Player movement is synced, but object interaction has to be patched up. I am gonna bring it up on the meeting tomorrow.
+
+## 2026-04-15
+Today we have a meeting where i will bring up my woes... Perhaps I am in the wrong here? We'll see 
