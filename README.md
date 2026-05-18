@@ -110,6 +110,7 @@ Today we have a meeting where i will bring up my woes... Perhaps I am in the wro
 
 I haven’t written in this blog for a while, and that’s because I’ve had a lot going on! So i will try to condense my contributions to what I’ve managed to do *every week* instead. 
 
+## The big Recap
 
 ### April 19th → April 25
 I am pretty sure I taught Lugina how to use Blender & Unity this day. Not sure though. Anyway, that took a lot of my time. To me its felt like the thing I’ve primarily done during this group project is manage the group rather than put down work itself. I remember being very antsy to start working on the game at this point. 
