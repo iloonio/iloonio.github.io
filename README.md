@@ -63,17 +63,22 @@ I haven't been writing much in this blog, because i've been doing lots of work o
 
 ### Random Generation
 ![initial](image-48.png)
+
 Suppose we have a NxN grid that represents the game world. The Cauldron will spawn at a set location on this game world, and the cauldron room will always have three doorways leading to it. 
 
 ![random1](image-49.png)
+
 Now, Randomly Assign Four Gardens on the grid, these are not allowed to be directly next to the Cauldron.
 
 
 ![Paths](image-50.png)
+
 Then, do a [[DFS properties|DFS]] search with a randomly chosen direction from each garden towards the Cauldron as the end location. The only limitation is that the DFS is not allowed to go to a Garden Node. DFS is allowed to visit nodes that have already been visited, but it is not allowed to go through a connection that has already been walked through. 
 
 ![Ingredients](image-51.png)
+
 Then, Assign each Garden an Ingredient and assign a Shortcut Path at a few randomly chosen and unassigned Paths, and also at one previously assigned path (but never directly to a garden). Shortcuts are paths that can be unlocked by either setting an obstacle on fire and/or blowing it up
+
 ![](image-52.png)
 
 And now randomly assign different room prefabs to the unclaimed tiles! There are some rules to this however: 
@@ -142,3 +147,17 @@ In return, Yufan offered me amazing chinese green tea, and Lugina gave me a donu
 On Wednesday, I merged everyone’s branches, there were some issues however that took time to sort out. Shuangyu started touching code that wasn’t part of his delegation of work, this is likely due to him misunderstanding that when I delegated out the workloads, I expected them to *only* touch their own tasks and not bleed out into doing other people’s work. This caused some tedious merge conflicts which took me some time to correct, culminating with me telling him exactly what behavior the code should produce, and what he should have changed. Once that was done, I looked through the changes Barney & the Designers made, and then I modified the cauldron to behave more like what we wanted it to be (it had a mesh collider to start with)
 
 After that was sorted, we had our first real playtest! IT was a bit janky at first, but we did eventually get it to work and it was really fun to see our work be present & existing.
+
+## May 18th 
+I forgot to mention that one of the BIGGEST things I've done during this project is code reviewing. I review all the code, and I make sure that its running correctly. This isn't a task I want to have, rather its one I have adopted out of necessesity. Because as much as I want to believe my fellow members that the code they've pushed has been tested, it likely has not. Maybe they pressed the play button, but that's about it.
+
+![our horrific KanBan Board with a milestone](milestone-kanban-may18.png)
+
+I also handle the kanban, which is a mess, but it works! The structure I've been running has worked something like this: 
+- Issues first appear in the **backlog**. Here, they are described & assigned to various members. Members drag these issues into the In Progress category. I add issues to backlog during meetings and in my own spare time in case I come up with something. There is no protocol for defining issues, its entirely based on vibes. I try to be as descriptive as possible, such that the designers & coders can both understand it. 
+- **In progress** means that this is what the members are currently working on. Honestly it's not an important category at all. I use it to track where we are in-between meetings, but everyone are at different levels of enthusiastic, so I don't enforce people to use it too much. 
+- **In Review** is where stuff lands when a member is done with an issue. Here, they must be reviewed by me and/or the whole group in its entirety. Only then can it be moved to Done. In review gathers a loooooot of issues which are then usually moved to the Done category after the meeting 
+- The **Done** category is self-explanatory. Finished issues end up here. I generally don't move finished issues back into the backlog, instead I'd rather make a duplicate issue in case something is missing. This feels like bad practice to me... But I didn't feel like changing it mid-project, so it stuck around for the entirety.  
+
+### QA testing... 
+I am so tired of QA testing someone else's code. If I ever start a game company, I am going to try and find someone who can do QA testing for me. It is gruel work that everything depends upon, but which nobody wants to do.
