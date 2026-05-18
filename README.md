@@ -107,3 +107,37 @@ At the very least, I made a functional lobby that connects to unity sessions and
 
 ## 2026-04-15
 Today we have a meeting where i will bring up my woes... Perhaps I am in the wrong here? We'll see 
+
+I haven’t written in this blog for a while, and that’s because I’ve had a lot going on! So i will try to condense my contributions to what I’ve managed to do *every week* instead. 
+
+
+### April 19th → April 25
+I am pretty sure I taught Lugina how to use Blender & Unity this day. Not sure though. Anyway, that took a lot of my time. To me its felt like the thing I’ve primarily done during this group project is manage the group rather than put down work itself. I remember being very antsy to start working on the game at this point. 
+
+### April 26th → May 2nd
+I coded multiplayer, i spent so much time learning how unity works until I got a functional prototype of the multiplayer. Aside from that, I’ve mostly just been leading the group, which has been a bit exhaustive but its been so much fun! Working with people from multiple disciplines is a very gratifying job for me. 
+
+Looking through my daily notes, it seems like I spent a lot of time trying to comprehend Shuangyu’s alchemy code, at the same time as I was trying to adapt it to Unity Netcode. I learned all about network variables, network propagation, spawning vs instantiating, how despawning should work, etc. It took a lot of time, but eventually I got it all working. 
+
+The final solution for the week was a botched server-client architecture with some elements of distributed authority archiecture. In practice this meant that the server & client would both be responsible for the game state, with physics and all, with clients gaining authority of objects that they pick up & touch. 
+
+Also i had severe wisdom tooth pain this week, so working was generally difficult. 
+
+### May 3rd → May 9th
+I booked a really long meeting where we’d work on different parts of the game together in the same room. I divvied up the work, so everyone knew what they were going to be doing, and I gave this in bite-sized pieces. Most of the time, I wasn’t even coding. I was mostly just answering questions, communicating across the two sub-teams in our team, it was really intense but so invigorating.
+
+Barney decided that the code base needed some cleaning up in order to scale, I agreed and let them know that I think its a good idea. To my surprise, they had indeed restructured literally the entire repository, and it was so amazing. The new code base felt so much easier to work with it. That being said, they had to rewrite almost all of the old alchemy code in order to make this change, so that work was sadly lost. Although, to be honest with you, I prefer the new code much more. It doesn’t have a rancid code smell to it, and I catch far less AI-abuse whiffs from it. 
+
+The new code base was flawed however. A lot of things didn’t work as expected. So, we decided that for next week, we would comb through it and fix every bug. 
+
+### May 10th → May 17th
+Me and Barney sat from 13:00 to 21:00 coding multiplayer in the refactored code base until it worked. We initially planned on doing some level design together with the Designers of the group, but Barney did not do the extensive testing that multiplayer required (Unity netcode often fails silently, so you have to thoroughly test everything at run-time). 
+
+Along the way, we discovered that the old code base suffered bugs that weren’t initially apparent (I hadn’t done thorough enough testing on the code base either, apparently), but became so once we started comparing the old with the new while investigating how we’d implement multiplayer for the new code base. It felt cathartic to have someone else to speak with about coding multiplayer, especially since I was already so familiar with unity netcode and its many quirks. Using AI was completely pointless, not that we even tried to. We mostly coded by ourselves, trying to turn Unity’s vague documentation and the old “solve-by-intuition” code from the multiplayer code base that I wrote. I am very happy to be working with someone like Barney: Someone who has more coding experience than me, who can teach me the best practices, while I handle the group communication, code legibility, and knowledge transferal.
+
+Once everything was finally ready, we could actually start working on the game with the new code base. I synced the designers, booking a meeting with them on Tuesday where I helped them get the latest version of the game running, while also making them feel more secure in using Git & Github. I also taught them some small tips & tricks about Unity which I picked up while sitting with it for a long time. I also taught them the basics of the changes we made to the code base, such that they could start building the level in Unity. 
+In return, Yufan offered me amazing chinese green tea, and Lugina gave me a donut :-) a fair trade.
+
+On Wednesday, I merged everyone’s branches, there were some issues however that took time to sort out. Shuangyu started touching code that wasn’t part of his delegation of work, this is likely due to him misunderstanding that when I delegated out the workloads, I expected them to *only* touch their own tasks and not bleed out into doing other people’s work. This caused some tedious merge conflicts which took me some time to correct, culminating with me telling him exactly what behavior the code should produce, and what he should have changed. Once that was done, I looked through the changes Barney & the Designers made, and then I modified the cauldron to behave more like what we wanted it to be (it had a mesh collider to start with)
+
+After that was sorted, we had our first real playtest! IT was a bit janky at first, but we did eventually get it to work and it was really fun to see our work be present & existing.
